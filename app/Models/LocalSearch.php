@@ -12,4 +12,9 @@ class LocalSearch extends Model
     protected $fillable = [
         'text'
     ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at'
+    ];
 }

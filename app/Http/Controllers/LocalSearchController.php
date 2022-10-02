@@ -16,8 +16,8 @@ class LocalSearchController extends Controller
      */
     public function index()
     {
-        $results = LocalSearch::all();
-        return $results;
+        $searches = LocalSearch::orderBy('created_at', 'asc')->paginate(10);
+        return view('user_registered.search_local.index', compact('searches'));
     }
     /**
      * Show the form for creating a new resource.
@@ -40,7 +40,7 @@ class LocalSearchController extends Controller
         $search = new LocalSearch;
         $search->text = $request->text;
         $search->save();
-        return 'wow man your the dino';
+        return $search;
     }
 
     /**
