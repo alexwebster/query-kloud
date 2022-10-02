@@ -24,3 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::resources([
+    'search' => \App\Http\Controllers\LocalSearchController::class,
+    'results' => \App\Http\Controllers\LocalSearchController::class,
+    'users' => \App\Http\Controllers\LocalSearchController::class,
+    'nasa-api' => \App\Http\Controllers\LocalSearchController::class,
+]);

@@ -15,9 +15,8 @@ class LocalSearchController extends Controller
      */
     public function index()
     {
-        //
+        return 'index message from LocalSearchController.php';
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +24,7 @@ class LocalSearchController extends Controller
      */
     public function create()
     {
-        //
+        return view('user_registered.search_local.create');
     }
 
     /**
@@ -36,7 +35,7 @@ class LocalSearchController extends Controller
      */
     public function store(StoreLocalSearchRequest $request)
     {
-        //
+
     }
 
     /**
