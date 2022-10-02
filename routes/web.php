@@ -18,7 +18,7 @@ use App\Http\Controllers\LocalSearchController;
 //    return view('welcome');
 //});
 Route::get('/', function () {
-    return view('search');
+    return view('index');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -18,10 +18,14 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                color:white;
             }
             input, textarea, button {
                 background-color:#666;
                 color: #FFF;
+            }
+            a {
+                color: skyblue;
             }
         </style>
     </head>
@@ -41,11 +45,9 @@
                 </div>
             @endif
                 <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                    <form method="POST" action="/profile">
-                        @csrf
-                        <input id="search"  class="form-control-lg" type="text" />
-                        <button type="submit" class="form-control-lg" @disabled($errors->isNotEmpty())>Submit</button>
-                    </form>
+                    <h1 class="text-center">Welcome to Query Kloud</h1>
+                    <a class="btn btn-lg btn-primary w-100" href="search/create">Query the Kloud</a>
+
                 </div>
                 
 {{--            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">--}}
