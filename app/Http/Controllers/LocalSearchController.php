@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LocalSearch;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreLocalSearchRequest;
 use App\Http\Requests\UpdateLocalSearchRequest;
 
@@ -15,7 +16,8 @@ class LocalSearchController extends Controller
      */
     public function index()
     {
-        return 'index message from LocalSearchController.php';
+        $results = LocalSearch::all();
+        return $results;
     }
     /**
      * Show the form for creating a new resource.
@@ -30,12 +32,15 @@ class LocalSearchController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreLocalSearchRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLocalSearchRequest $request)
+    public function store(Request $request)
     {
-
+        $search = new LocalSearch;
+        $search->text = $request->text;
+        $search->save();
+        return 'wow man your the dino';
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocalSearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resources([
-    'search' => \App\Http\Controllers\LocalSearchController::class,
-    'results' => \App\Http\Controllers\LocalSearchController::class,
-    'users' => \App\Http\Controllers\LocalSearchController::class,
-    'nasa-api' => \App\Http\Controllers\LocalSearchController::class,
-]);
+//Route::resource('search', \App\Http\Controllers\LocalSearchController::class);
+
+Route::get('search', [LocalSearchController::class, 'index']);
+Route::get('search/create', [LocalSearchController::class, 'create']);
+Route::post('search/store', [LocalSearchController::class, 'store']);
+//Route::resource('search', \App\Http\Controllers\LocalSearchController::class, ['names'=>[
+//    'index'=>'search.index',
+//    'create'=>'search.create',
+//    'store'=>'search.store',
+//    'edit'=>'search.edit',
+//]])->middleware('auth');
