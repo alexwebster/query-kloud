@@ -30,7 +30,7 @@ require __DIR__.'/auth.php';
 
 Route::get('search', [LocalSearchController::class, 'index']);
 Route::get('search/create', [LocalSearchController::class, 'create']);
-Route::post('search/store', [LocalSearchController::class, 'store']);
+Route::post('store-localsearch', [LocalSearchController::class, 'store'])->name('store-localsearch');
 //Route::resource('search', \App\Http\Controllers\LocalSearchController::class, ['names'=>[
 //    'index'=>'search.index',
 //    'create'=>'search.create',

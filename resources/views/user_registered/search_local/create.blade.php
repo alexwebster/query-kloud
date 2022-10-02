@@ -41,9 +41,9 @@
                 </div>
             @endif
                 <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                    <form name="store-local-search" id="store-local-search" method="post" action="{{ url('create/store') }}">
+                    <form method="post" action="{{ route('store-localsearch') }}" >
                         @csrf
-                        <input id="text"  class="form-control-lg" type="text" />
+                        <input id="text" name="text" class="form-control-lg" type="text" />
                         <button type="submit" class="form-control-lg" @disabled($errors->isNotEmpty())>Submit</button>
                     </form>
                 </div>
